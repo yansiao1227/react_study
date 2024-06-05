@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test"></div>
+<div id="test0"></div>
+</body>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<script type="text/babel">
+    //类式组件使用props
+    class Person extends React.Component{
+        render(){
+            const {name,sex,age,speak}=this.props
+            return(
+                <ul>
+                    <li>
+                        姓名:{name}
+                    </li>
+                    <li>
+                        性别:{sex}
+                    </li>
+                    <li>
+                        年龄:{age+1}
+                    </li>
+                </ul>
+            )
+        }
+        static propTypes={
+            name:PropTypes.string.isRequired,
+            sex:PropTypes.string,
+            age:PropTypes.number,
+            speak:PropTypes.func
+        }
+        static defaultProps={
+            sex:'unknown',
+            age:18
+        }
+    }
+
+    const p={name:'ysa',age:24,sex:'male',speak:speak}
+    ReactDOM.render(<Person {...p}/>,document.getElementById('test'))
+    function speak(){
+        console.log('ni-hao')
+    }
+
+    //函数式组件使用props
+    function PersonFunc(props){
+        const {name,sex,age,speak}=props
+        return(
+            <ul>
+                <li>
+                    姓名:{name}
+                </li>
+                <li>
+                    性别:{sex}
+                </li>
+                <li>
+                    年龄:{age+1}
+                </li>
+            </ul>
+        )
+    }
+
+
+    PersonFunc.propTypes={
+        name:PropTypes.string.isRequired,
+        sex:PropTypes.string,
+        age:PropTypes.number,
+        speak:PropTypes.func
+    }
+    PersonFunc.defaultProps={
+        sex:'unknown',
+        age:18
+    }
+    ReactDOM.render(<PersonFunc {...p}/>,document.getElementById('test0'))
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<script type="text/babel">
+    class Demo extends React.Component {
+        showData = () => {
+            const {input} = this
+            alert(input.value)
+        }
+        state = {
+            isHot: false
+        }
+        changeWeather = () => {
+            const isHot = this.state.isHot
+            this.setState({isHot: !isHot})
+        }
+
+        render() {
+            const {isHot} = this.state
+            return (
+                <div>
+                    <h2>weather is very {isHot ? 'hot' : 'cool'}</h2>
+                    <div>
+                        <input type="test" ref={c => this.input = c}/>
+                        <button onClick={this.showData}>click</button>
+                        <button onClick={this.changeWeather}>switch</button>
+                    </div>
+                </div>
+            )
+        }
+
+    }
+
+    ReactDOM.render(<Demo/>, document.getElementById('test'))
+</script>
+</html>

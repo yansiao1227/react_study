@@ -258,7 +258,7 @@
         return;
       }
 
-      error("Can't call %s on a component that is not yet mounted. " + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.state` directly or define a `state = {};` ' + 'class property with the desired state in the %s component.', callerName, componentName);
+      error("Can't call %s on a component that is not yet mounted. " + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.06三大属性state` directly or define a `06三大属性state = {};` ' + 'class property with the desired 06三大属性state in the %s component.', callerName, componentName);
 
       didWarnStateUpdateForUnmountedComponent[warningKey] = true;
     }
@@ -285,7 +285,7 @@
      * certainty that we are **not** in a DOM transaction.
      *
      * You may want to call this when you know that some deeper aspect of the
-     * component's state has changed but `setState` was not called.
+     * component's 06三大属性state has changed but `setState` was not called.
      *
      * This will not invoke `shouldComponentUpdate`, but it will invoke
      * `componentWillUpdate` and `componentDidUpdate`.
@@ -300,14 +300,14 @@
     },
 
     /**
-     * Replaces all of the state. Always use this or `setState` to mutate state.
-     * You should treat `this.state` as immutable.
+     * Replaces all of the 06三大属性state. Always use this or `setState` to mutate 06三大属性state.
+     * You should treat `this.06三大属性state` as immutable.
      *
-     * There is no guarantee that `this.state` will be immediately updated, so
-     * accessing `this.state` after calling this method may return the old value.
+     * There is no guarantee that `this.06三大属性state` will be immediately updated, so
+     * accessing `this.06三大属性state` after calling this method may return the old value.
      *
      * @param {ReactClass} publicInstance The instance that should rerender.
-     * @param {object} completeState Next state.
+     * @param {object} completeState Next 06三大属性state.
      * @param {?function} callback Called after component is updated.
      * @param {?string} callerName name of the calling function in the public API.
      * @internal
@@ -317,13 +317,13 @@
     },
 
     /**
-     * Sets a subset of the state. This only exists because _pendingState is
+     * Sets a subset of the 06三大属性state. This only exists because _pendingState is
      * internal. This provides a merging strategy that is not available to deep
      * properties which is confusing. TODO: Expose pendingState or don't use it
      * during the merge.
      *
      * @param {ReactClass} publicInstance The instance that should rerender.
-     * @param {object} partialState Next partial state to be merged with state.
+     * @param {object} partialState Next partial 06三大属性state to be merged with 06三大属性state.
      * @param {?function} callback Called after component is updated.
      * @param {?string} Name of the calling function in the public API.
      * @internal
@@ -339,7 +339,7 @@
     Object.freeze(emptyObject);
   }
   /**
-   * Base class helpers for the updating state of a component.
+   * Base class helpers for the updating 06三大属性state of a component.
    */
 
 
@@ -355,11 +355,11 @@
 
   Component.prototype.isReactComponent = {};
   /**
-   * Sets a subset of the state. Always use this to mutate
-   * state. You should treat `this.state` as immutable.
+   * Sets a subset of the 06三大属性state. Always use this to mutate
+   * 06三大属性state. You should treat `this.06三大属性state` as immutable.
    *
-   * There is no guarantee that `this.state` will be immediately updated, so
-   * accessing `this.state` after calling this method may return the old value.
+   * There is no guarantee that `this.06三大属性state` will be immediately updated, so
+   * accessing `this.06三大属性state` after calling this method may return the old value.
    *
    * There is no guarantee that calls to `setState` will run synchronously,
    * as they may eventually be batched together.  You can provide an optional
@@ -368,14 +368,14 @@
    *
    * When a function is provided to setState, it will be called at some point in
    * the future (not synchronously). It will be called with the up to date
-   * component arguments (state, props, context). These values can be different
+   * component arguments (06三大属性state, props, context). These values can be different
    * from this.* because your function may be called after receiveProps but before
-   * shouldComponentUpdate, and this new state, props, and context will not yet be
+   * shouldComponentUpdate, and this new 06三大属性state, props, and context will not yet be
    * assigned to this.
    *
-   * @param {object|function} partialState Next partial state or function to
-   *        produce next partial state to be merged with current state.
-   * @param {?function} callback Called after state is updated.
+   * @param {object|function} partialState Next partial 06三大属性state or function to
+   *        produce next partial 06三大属性state to be merged with current 06三大属性state.
+   * @param {?function} callback Called after 06三大属性state is updated.
    * @final
    * @protected
    */
@@ -383,7 +383,7 @@
   Component.prototype.setState = function (partialState, callback) {
     if (!(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null)) {
       {
-        throw Error( "setState(...): takes an object of state variables to update or a function which returns an object of state variables." );
+        throw Error( "setState(...): takes an object of 06三大属性state variables to update or a function which returns an object of 06三大属性state variables." );
       }
     }
 
@@ -394,7 +394,7 @@
    * certainty that we are **not** in a DOM transaction.
    *
    * You may want to call this when you know that some deeper aspect of the
-   * component's state has changed but `setState` was not called.
+   * component's 06三大属性state has changed but `setState` was not called.
    *
    * This will not invoke `shouldComponentUpdate`, but it will invoke
    * `componentWillUpdate` and `componentDidUpdate`.
@@ -1297,7 +1297,7 @@
   function lazyInitializer(payload) {
     if (payload._status === Uninitialized) {
       var ctor = payload._result;
-      var thenable = ctor(); // Transition to the next state.
+      var thenable = ctor(); // Transition to the next 06三大属性state.
 
       var pending = payload;
       pending._status = Pending;
@@ -1311,7 +1311,7 @@
               error('lazy: Expected the result of a dynamic import() call. ' + 'Instead received: %s\n\nYour code should look like: \n  ' + // Break up imports to avoid accidentally parsing them as dependencies.
               'const MyComponent = lazy(() => imp' + "ort('./MyComponent'))", moduleObject);
             }
-          } // Transition to the next state.
+          } // Transition to the next 06三大属性state.
 
 
           var resolved = payload;
@@ -1320,7 +1320,7 @@
         }
       }, function (error) {
         if (payload._status === Pending) {
-          // Transition to the next state.
+          // Transition to the next 06三大属性state.
           var rejected = payload;
           rejected._status = Rejected;
           rejected._result = error;

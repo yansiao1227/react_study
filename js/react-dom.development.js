@@ -16,7 +16,7 @@
 }(this, (function (React) { 'use strict';
 
 /**
- * Use invariant() to assert state which your program assumes to be true.
+ * Use invariant() to assert 06三大属性state which your program assumes to be true.
  *
  * Provide sprintf-style format (only %s is supported) and arguments
  * to provide information about what broke and what you were
@@ -896,7 +896,7 @@ function getInstanceFromNode$1(node) {
  */
 function getNodeFromInstance$1(inst) {
   if (inst.tag === HostComponent || inst.tag === HostText) {
-    // In Fiber this, is just the state node right now. We assume it will be
+    // In Fiber this, is just the 06三大属性state node right now. We assume it will be
     // a host component or host text.
     return inst.stateNode;
   }
@@ -2066,7 +2066,7 @@ var BeforeInputEventPlugin = {
   }
 };
 
-// Use to restore controlled state after a change event has fired.
+// Use to restore controlled 06三大属性state after a change event has fired.
 
 var restoreImpl = null;
 var restoreTarget = null;
@@ -2141,7 +2141,7 @@ var isBatching = false;
 function batchedUpdates(fn, bookkeeping) {
   if (isBatching) {
     // If we are currently inside another batch, we need to wait until it
-    // fully completes before restoring state.
+    // fully completes before restoring 06三大属性state.
     return fn(bookkeeping);
   }
   isBatching = true;
@@ -2151,11 +2151,11 @@ function batchedUpdates(fn, bookkeeping) {
     // Here we wait until all updates have propagated, which is important
     // when using controlled components within layers:
     // https://github.com/facebook/react/issues/1698
-    // Then we restore state of any controlled component.
+    // Then we restore 06三大属性state of any controlled component.
     isBatching = false;
     var controlledComponentsHavePendingUpdates = needsStateRestore();
     if (controlledComponentsHavePendingUpdates) {
-      // If a controlled event was fired, we may need to restore the state of
+      // If a controlled event was fired, we may need to restore the 06三大属性state of
       // the DOM node back to the controlled value. This is necessary when React
       // bails out of the update without touching the DOM.
       _flushInteractiveUpdatesImpl();
@@ -3288,7 +3288,7 @@ function isControlled(props) {
  * props: `checked`, `value`, `defaultChecked`, and `defaultValue`.
  *
  * If `checked` or `value` are not supplied (or null/undefined), user actions
- * that affect the checked state or value will trigger updates to the element.
+ * that affect the checked 06三大属性state or value will trigger updates to the element.
  *
  * If they are supplied (and not null/undefined), the rendered element will not
  * trigger updates to the element. Instead, the props must change in order for
@@ -3611,7 +3611,7 @@ var eventTypes$1 = {
 function createAndAccumulateChangeEvent(inst, nativeEvent, target) {
   var event = SyntheticEvent.getPooled(eventTypes$1.change, inst, nativeEvent, target);
   event.type = 'change';
-  // Flag this event loop as needing state restore.
+  // Flag this event loop as needing 06三大属性state restore.
   enqueueStateRestore(target);
   accumulateTwoPhaseDispatches(event);
   return event;
@@ -4206,7 +4206,7 @@ function isMounted(component) {
     if (owner !== null && owner.tag === ClassComponent) {
       var ownerFiber = owner;
       var instance = ownerFiber.stateNode;
-      !instance._warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(ownerFiber.type) || 'A component') : void 0;
+      !instance._warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and 06三大属性state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(ownerFiber.type) || 'A component') : void 0;
       instance._warnedAboutRefsInRender = true;
     }
   }
@@ -5088,7 +5088,7 @@ function getListeningForDocument(mountAt) {
 /**
  * We listen for bubbled touch events on the document object.
  *
- * Firefox v8.01 (and possibly others) exhibited strange behavior when
+ * Firefox v8.01预备工作 (and possibly others) exhibited strange behavior when
  * mounting `onmousemove` events at some node that was not the document
  * element. The symptoms were that if your mouse is not moving over something
  * contained within that mount point (for example on the background) the
@@ -5963,7 +5963,7 @@ function postUpdateWrapper(element, props) {
     if (props.defaultValue != null) {
       updateOptions(node, !!props.multiple, props.defaultValue, true);
     } else {
-      // Revert the select back to its default unselected state.
+      // Revert the select back to its default unselected 06三大属性state.
       updateOptions(node, !!props.multiple, props.multiple ? [] : '', false);
     }
   }
@@ -7163,11 +7163,11 @@ var possibleStandardNames = {
 };
 
 var ariaProperties = {
-  'aria-current': 0, // state
+  'aria-current': 0, // 06三大属性state
   'aria-details': 0,
-  'aria-disabled': 0, // state
-  'aria-hidden': 0, // state
-  'aria-invalid': 0, // state
+  'aria-disabled': 0, // 06三大属性state
+  'aria-hidden': 0, // 06三大属性state
+  'aria-invalid': 0, // 06三大属性state
   'aria-keyshortcuts': 0,
   'aria-label': 0,
   'aria-roledescription': 0,
@@ -8324,7 +8324,7 @@ function diffHydratedProperties(domElement, tag, rawProps, parentNamespace, root
       // For input and textarea we current always set the value property at
       // post mount to force it to diverge from attributes. However, for
       // option and select we don't quite do the same thing and select
-      // is not resilient to the DOM state changing so we don't do that here.
+      // is not resilient to the DOM 06三大属性state changing so we don't do that here.
       // TODO: Consider not doing this for input and textarea.
       break;
     default:
@@ -11212,7 +11212,7 @@ var didWarnAboutInvalidateContextType = void 0;
       var componentName = getComponentName(type) || 'Component';
       if (!didWarnAboutUndefinedDerivedState.has(componentName)) {
         didWarnAboutUndefinedDerivedState.add(componentName);
-        warningWithoutStack$1(false, '%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. ' + 'You have returned undefined.', componentName);
+        warningWithoutStack$1(false, '%s.getDerivedStateFromProps(): A valid 06三大属性state object (or null) must be returned. ' + 'You have returned undefined.', componentName);
       }
     }
   };
@@ -11246,12 +11246,12 @@ function applyDerivedStateFromProps(workInProgress, ctor, getDerivedStateFromPro
   {
     warnOnUndefinedDerivedState(ctor, partialState);
   }
-  // Merge the partial state and the previous state.
+  // Merge the partial 06三大属性state and the previous 06三大属性state.
   var memoizedState = partialState === null || partialState === undefined ? prevState : _assign({}, prevState, partialState);
   workInProgress.memoizedState = memoizedState;
 
-  // Once the update queue is empty, persist the derived state onto the
-  // base state.
+  // Once the update queue is empty, persist the derived 06三大属性state onto the
+  // base 06三大属性state.
   var updateQueue = workInProgress.updateQueue;
   if (updateQueue !== null && workInProgress.expirationTime === NoWork) {
     updateQueue.baseState = memoizedState;
@@ -11355,7 +11355,7 @@ function checkClassInstance(workInProgress, ctor, newProps) {
     }
 
     var noGetInitialStateOnES6 = !instance.getInitialState || instance.getInitialState.isReactClassApproved || instance.state;
-    !noGetInitialStateOnES6 ? warningWithoutStack$1(false, 'getInitialState was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Did you mean to define a state property instead?', name) : void 0;
+    !noGetInitialStateOnES6 ? warningWithoutStack$1(false, 'getInitialState was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Did you mean to define a 06三大属性state property instead?', name) : void 0;
     var noGetDefaultPropsOnES6 = !instance.getDefaultProps || instance.getDefaultProps.isReactClassApproved;
     !noGetDefaultPropsOnES6 ? warningWithoutStack$1(false, 'getDefaultProps was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Use a static property to define defaultProps instead.', name) : void 0;
     var noInstancePropTypes = !instance.propTypes;
@@ -11378,7 +11378,7 @@ function checkClassInstance(workInProgress, ctor, newProps) {
     var noComponentDidUnmount = typeof instance.componentDidUnmount !== 'function';
     !noComponentDidUnmount ? warningWithoutStack$1(false, '%s has a method called ' + 'componentDidUnmount(). But there is no such lifecycle method. ' + 'Did you mean componentWillUnmount()?', name) : void 0;
     var noComponentDidReceiveProps = typeof instance.componentDidReceiveProps !== 'function';
-    !noComponentDidReceiveProps ? warningWithoutStack$1(false, '%s has a method called ' + 'componentDidReceiveProps(). But there is no such lifecycle method. ' + 'If you meant to update the state in response to changing props, ' + 'use componentWillReceiveProps(). If you meant to fetch data or ' + 'run side-effects or mutations after React has updated the UI, use componentDidUpdate().', name) : void 0;
+    !noComponentDidReceiveProps ? warningWithoutStack$1(false, '%s has a method called ' + 'componentDidReceiveProps(). But there is no such lifecycle method. ' + 'If you meant to update the 06三大属性state in response to changing props, ' + 'use componentWillReceiveProps(). If you meant to fetch data or ' + 'run side-effects or mutations after React has updated the UI, use componentDidUpdate().', name) : void 0;
     var noComponentWillRecieveProps = typeof instance.componentWillRecieveProps !== 'function';
     !noComponentWillRecieveProps ? warningWithoutStack$1(false, '%s has a method called ' + 'componentWillRecieveProps(). Did you mean componentWillReceiveProps()?', name) : void 0;
     var noUnsafeComponentWillRecieveProps = typeof instance.UNSAFE_componentWillRecieveProps !== 'function';
@@ -11401,7 +11401,7 @@ function checkClassInstance(workInProgress, ctor, newProps) {
     !noStaticGetSnapshotBeforeUpdate ? warningWithoutStack$1(false, '%s: getSnapshotBeforeUpdate() is defined as a static method ' + 'and will be ignored. Instead, declare it as an instance method.', name) : void 0;
     var _state = instance.state;
     if (_state && (typeof _state !== 'object' || isArray$1(_state))) {
-      warningWithoutStack$1(false, '%s.state: must be set to an object or null', name);
+      warningWithoutStack$1(false, '%s.06三大属性state: must be set to an object or null', name);
     }
     if (typeof instance.getChildContext === 'function') {
       !(typeof ctor.childContextTypes === 'object') ? warningWithoutStack$1(false, '%s.getChildContext(): childContextTypes must be defined in order to ' + 'use getChildContext().', name) : void 0;
@@ -11456,7 +11456,7 @@ function constructClassInstance(workInProgress, ctor, props, renderExpirationTim
       var componentName = getComponentName(ctor) || 'Component';
       if (!didWarnAboutUninitializedState.has(componentName)) {
         didWarnAboutUninitializedState.add(componentName);
-        warningWithoutStack$1(false, '`%s` uses `getDerivedStateFromProps` but its initial state is ' + '%s. This is not recommended. Instead, define the initial state by ' + 'assigning an object to `this.state` in the constructor of `%s`. ' + 'This ensures that `getDerivedStateFromProps` arguments have a consistent shape.', componentName, instance.state === null ? 'null' : 'undefined', componentName);
+        warningWithoutStack$1(false, '`%s` uses `getDerivedStateFromProps` but its initial 06三大属性state is ' + '%s. This is not recommended. Instead, define the initial 06三大属性state by ' + 'assigning an object to `this.06三大属性state` in the constructor of `%s`. ' + 'This ensures that `getDerivedStateFromProps` arguments have a consistent shape.', componentName, instance.state === null ? 'null' : 'undefined', componentName);
       }
     }
 
@@ -11517,7 +11517,7 @@ function callComponentWillMount(workInProgress, instance) {
 
   if (oldState !== instance.state) {
     {
-      warningWithoutStack$1(false, '%s.componentWillMount(): Assigning directly to this.state is ' + "deprecated (except inside a component's " + 'constructor). Use setState instead.', getComponentName(workInProgress.type) || 'Component');
+      warningWithoutStack$1(false, '%s.componentWillMount(): Assigning directly to this.06三大属性state is ' + "deprecated (except inside a component's " + 'constructor). Use setState instead.', getComponentName(workInProgress.type) || 'Component');
     }
     classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
   }
@@ -11539,7 +11539,7 @@ function callComponentWillReceiveProps(workInProgress, instance, newProps, nextC
       var componentName = getComponentName(workInProgress.type) || 'Component';
       if (!didWarnAboutStateAssignmentForComponent.has(componentName)) {
         didWarnAboutStateAssignmentForComponent.add(componentName);
-        warningWithoutStack$1(false, '%s.componentWillReceiveProps(): Assigning directly to ' + "this.state is deprecated (except inside a component's " + 'constructor). Use setState instead.', componentName);
+        warningWithoutStack$1(false, '%s.componentWillReceiveProps(): Assigning directly to ' + "this.06三大属性state is deprecated (except inside a component's " + 'constructor). Use setState instead.', componentName);
       }
     }
     classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
@@ -11570,7 +11570,7 @@ function mountClassInstance(workInProgress, ctor, newProps, renderExpirationTime
       var componentName = getComponentName(ctor) || 'Component';
       if (!didWarnAboutDirectlyAssigningPropsToState.has(componentName)) {
         didWarnAboutDirectlyAssigningPropsToState.add(componentName);
-        warningWithoutStack$1(false, '%s: It is not recommended to assign props directly to state ' + "because updates to props won't be reflected in state. " + 'In most cases, it is better to use props directly.', componentName);
+        warningWithoutStack$1(false, '%s: It is not recommended to assign props directly to 06三大属性state ' + "because updates to props won't be reflected in 06三大属性state. " + 'In most cases, it is better to use props directly.', componentName);
       }
     }
 
@@ -11601,7 +11601,7 @@ function mountClassInstance(workInProgress, ctor, newProps, renderExpirationTime
   // Unsafe lifecycles should not be invoked for components using the new APIs.
   if (typeof ctor.getDerivedStateFromProps !== 'function' && typeof instance.getSnapshotBeforeUpdate !== 'function' && (typeof instance.UNSAFE_componentWillMount === 'function' || typeof instance.componentWillMount === 'function')) {
     callComponentWillMount(workInProgress, instance);
-    // If we had additional state updates during this life-cycle, let's
+    // If we had additional 06三大属性state updates during this life-cycle, let's
     // process them now.
     updateQueue = workInProgress.updateQueue;
     if (updateQueue !== null) {
@@ -11634,7 +11634,7 @@ function resumeMountClassInstance(workInProgress, ctor, newProps, renderExpirati
   var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
   var hasNewLifecycles = typeof getDerivedStateFromProps === 'function' || typeof instance.getSnapshotBeforeUpdate === 'function';
 
-  // Note: During these life-cycles, instance.props/instance.state are what
+  // Note: During these life-cycles, instance.props/instance.06三大属性state are what
   // ever the previously attempted to render - not the "current". However,
   // during componentDidUpdate we pass the "current" props.
 
@@ -11695,12 +11695,12 @@ function resumeMountClassInstance(workInProgress, ctor, newProps, renderExpirati
     }
 
     // If shouldComponentUpdate returned false, we should still update the
-    // memoized state to indicate that this work can be reused.
+    // memoized 06三大属性state to indicate that this work can be reused.
     workInProgress.memoizedProps = newProps;
     workInProgress.memoizedState = newState;
   }
 
-  // Update the existing instance's state, props, and context pointers even
+  // Update the existing instance's 06三大属性state, props, and context pointers even
   // if shouldComponentUpdate returns false.
   instance.props = newProps;
   instance.state = newState;
@@ -11729,7 +11729,7 @@ function updateClassInstance(current, workInProgress, ctor, newProps, renderExpi
   var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
   var hasNewLifecycles = typeof getDerivedStateFromProps === 'function' || typeof instance.getSnapshotBeforeUpdate === 'function';
 
-  // Note: During these life-cycles, instance.props/instance.state are what
+  // Note: During these life-cycles, instance.props/instance.06三大属性state are what
   // ever the previously attempted to render - not the "current". However,
   // during componentDidUpdate we pass the "current" props.
 
@@ -11808,12 +11808,12 @@ function updateClassInstance(current, workInProgress, ctor, newProps, renderExpi
     }
 
     // If shouldComponentUpdate returned false, we should still update the
-    // memoized props/state to indicate that this work can be reused.
+    // memoized props/06三大属性state to indicate that this work can be reused.
     workInProgress.memoizedProps = newProps;
     workInProgress.memoizedState = newState;
   }
 
-  // Update the existing instance's state, props, and context pointers even
+  // Update the existing instance's 06三大属性state, props, and context pointers even
   // if shouldComponentUpdate returns false.
   instance.props = newProps;
   instance.state = newState;
@@ -13114,7 +13114,7 @@ function resetHooks() {
   // at the beginning of the render phase and there's no re-entrancy.
   ReactCurrentDispatcher$1.current = ContextOnlyDispatcher;
 
-  // This is used to reset the state of this module when a component throws.
+  // This is used to reset the 06三大属性state of this module when a component throws.
   // It's also called inside mountIndeterminateComponent if we determine the
   // component is a module-style component.
   renderExpirationTime = NoWork;
@@ -13258,15 +13258,15 @@ function updateReducer(reducer, initialArg, init) {
           update = update.next;
         } while (update !== null);
 
-        // Mark that the fiber performed work, but only if the new state is
-        // different from the current state.
+        // Mark that the fiber performed work, but only if the new 06三大属性state is
+        // different from the current 06三大属性state.
         if (!is(newState, hook.memoizedState)) {
           markWorkInProgressReceivedUpdate();
         }
 
         hook.memoizedState = newState;
-        // Don't persist the state accumlated from the render phase updates to
-        // the base state unless the queue is empty.
+        // Don't persist the 06三大属性state accumlated from the render phase updates to
+        // the base 06三大属性state unless the queue is empty.
         // TODO: Not sure if this is the desired semantics, but it's what we
         // do for gDSFP. I can't remember why.
         if (hook.baseUpdate === queue.last) {
@@ -13284,7 +13284,7 @@ function updateReducer(reducer, initialArg, init) {
 
   // The last update in the entire queue
   var last = queue.last;
-  // The last update that is part of the base state.
+  // The last update that is part of the base 06三大属性state.
   var baseUpdate = hook.baseUpdate;
   var baseState = hook.baseState;
 
@@ -13312,8 +13312,8 @@ function updateReducer(reducer, initialArg, init) {
       var updateExpirationTime = _update.expirationTime;
       if (updateExpirationTime < renderExpirationTime) {
         // Priority is insufficient. Skip this update. If this is the first
-        // skipped update, the previous update/state is the new base
-        // update/state.
+        // skipped update, the previous update/06三大属性state is the new base
+        // update/06三大属性state.
         if (!didSkip) {
           didSkip = true;
           newBaseUpdate = prevUpdate;
@@ -13327,7 +13327,7 @@ function updateReducer(reducer, initialArg, init) {
         // Process this update.
         if (_update.eagerReducer === reducer) {
           // If this update was processed eagerly, and its reducer matches the
-          // current reducer, we can use the eagerly computed state.
+          // current reducer, we can use the eagerly computed 06三大属性state.
           _newState = _update.eagerState;
         } else {
           var _action2 = _update.action;
@@ -13343,8 +13343,8 @@ function updateReducer(reducer, initialArg, init) {
       newBaseState = _newState;
     }
 
-    // Mark that the fiber performed work, but only if the new state is
-    // different from the current state.
+    // Mark that the fiber performed work, but only if the new 06三大属性state is
+    // different from the current 06三大属性state.
     if (!is(_newState, hook.memoizedState)) {
       markWorkInProgressReceivedUpdate();
     }
@@ -13646,8 +13646,8 @@ function dispatchAction(fiber, queue, action) {
 
     if (fiber.expirationTime === NoWork && (alternate === null || alternate.expirationTime === NoWork)) {
       // The queue is currently empty, which means we can eagerly compute the
-      // next state before entering the render phase. If the new state is the
-      // same as the current state, we may be able to bail out entirely.
+      // next 06三大属性state before entering the render phase. If the new 06三大属性state is the
+      // same as the current 06三大属性state, we may be able to bail out entirely.
       var _eagerReducer = queue.eagerReducer;
       if (_eagerReducer !== null) {
         var prevDispatcher = void 0;
@@ -13658,9 +13658,9 @@ function dispatchAction(fiber, queue, action) {
         try {
           var currentState = queue.eagerState;
           var _eagerState = _eagerReducer(currentState, action);
-          // Stash the eagerly computed state, and the reducer used to compute
+          // Stash the eagerly computed 06三大属性state, and the reducer used to compute
           // it, on the update object. If the reducer hasn't changed by the
-          // time we enter the render phase, then the eager state can be used
+          // time we enter the render phase, then the eager 06三大属性state can be used
           // without calling the reducer again.
           _update2.eagerReducer = _eagerReducer;
           _update2.eagerState = _eagerState;
@@ -14764,7 +14764,7 @@ function updateClassComponent(current$$1, workInProgress, Component, nextProps, 
   if (instance === null) {
     if (current$$1 !== null) {
       // An class component without an instance only mounts if it suspended
-      // inside a non- concurrent tree, in an inconsistent state. We want to
+      // inside a non- concurrent tree, in an inconsistent 06三大属性state. We want to
       // tree it like a new mount, even though an empty version of it already
       // committed. Disconnect the alternate pointers.
       current$$1.alternate = null;
@@ -14847,7 +14847,7 @@ function finishClassComponent(current$$1, workInProgress, Component, shouldUpdat
     reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   }
 
-  // Memoize state using the values we just used to render.
+  // Memoize 06三大属性state using the values we just used to render.
   // TODO: Restructure so we never read values from the instance.
   workInProgress.memoizedState = instance.state;
 
@@ -14883,7 +14883,7 @@ function updateHostRoot(current$$1, workInProgress, renderExpirationTime) {
   // being called "element".
   var nextChildren = nextState.element;
   if (nextChildren === prevChildren) {
-    // If the state is the same as before, that's a bailout because we had
+    // If the 06三大属性state is the same as before, that's a bailout because we had
     // no work that expires at this time.
     resetHydrationState();
     return bailoutOnAlreadyFinishedWork(current$$1, workInProgress, renderExpirationTime);
@@ -14896,7 +14896,7 @@ function updateHostRoot(current$$1, workInProgress, renderExpirationTime) {
     // not hydrating.
 
     // This is a bit of a hack. We track the host root as a placement to
-    // know that we're currently in a mounting state. That way isMounted
+    // know that we're currently in a mounting 06三大属性state. That way isMounted
     // works as expected. We must reset this before committing.
     // TODO: Delete this when we delete isMounted and findDOMNode.
     workInProgress.effectTag |= Placement;
@@ -14906,7 +14906,7 @@ function updateHostRoot(current$$1, workInProgress, renderExpirationTime) {
     // nodes that will be hydrated.
     workInProgress.child = mountChildFibers(workInProgress, null, nextChildren, renderExpirationTime);
   } else {
-    // Otherwise reset hydration state in case we aborted and resumed another
+    // Otherwise reset hydration 06三大属性state in case we aborted and resumed another
     // root.
     reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
     resetHydrationState();
@@ -14965,7 +14965,7 @@ function updateHostText(current$$1, workInProgress) {
 function mountLazyComponent(_current, workInProgress, elementType, updateExpirationTime, renderExpirationTime) {
   if (_current !== null) {
     // An lazy component only mounts if it suspended inside a non-
-    // concurrent tree, in an inconsistent state. We want to treat it like
+    // concurrent tree, in an inconsistent 06三大属性state. We want to treat it like
     // a new mount, even though an empty version of it already committed.
     // Disconnect the alternate pointers.
     _current.alternate = null;
@@ -15039,7 +15039,7 @@ function mountLazyComponent(_current, workInProgress, elementType, updateExpirat
 function mountIncompleteClassComponent(_current, workInProgress, Component, nextProps, renderExpirationTime) {
   if (_current !== null) {
     // An incomplete component only mounts if it suspended inside a non-
-    // concurrent tree, in an inconsistent state. We want to treat it like
+    // concurrent tree, in an inconsistent 06三大属性state. We want to treat it like
     // a new mount, even though an empty version of it already committed.
     // Disconnect the alternate pointers.
     _current.alternate = null;
@@ -15074,7 +15074,7 @@ function mountIncompleteClassComponent(_current, workInProgress, Component, next
 function mountIndeterminateComponent(_current, workInProgress, Component, renderExpirationTime) {
   if (_current !== null) {
     // An indeterminate component only mounts if it suspended inside a non-
-    // concurrent tree, in an inconsistent state. We want to treat it like
+    // concurrent tree, in an inconsistent 06三大属性state. We want to treat it like
     // a new mount, even though an empty version of it already committed.
     // Disconnect the alternate pointers.
     _current.alternate = null;
@@ -15225,11 +15225,11 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
   // This next part is a bit confusing. If the children timeout, we switch to
   // showing the fallback children in place of the "primary" children.
   // However, we don't want to delete the primary children because then their
-  // state will be lost (both the React state and the host state, e.g.
+  // 06三大属性state will be lost (both the React 06三大属性state and the host 06三大属性state, e.g.
   // uncontrolled form inputs). Instead we keep them mounted and hide them.
   // Both the fallback children AND the primary children are rendered at the
   // same time. Once the primary children are un-suspended, we can delete
-  // the fallback children — don't need to preserve their state.
+  // the fallback children — don't need to preserve their 06三大属性state.
   //
   // The two sets of children are siblings in the host environment, but
   // semantically, for purposes of reconciliation, they are two separate sets.
@@ -15241,7 +15241,7 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
   //
   // So, the extra fragment fibers are only used if the children time out.
   // Otherwise, we render the primary children directly. This requires some
-  // custom reconciliation logic to preserve the state of the primary
+  // custom reconciliation logic to preserve the 06三大属性state of the primary
   // children. It's essentially a very basic form of re-parenting.
 
   // `child` points to the child fiber. In the normal case, this is the first
@@ -15267,7 +15267,7 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
     }
 
     // This is the initial mount. This branch is pretty simple because there's
-    // no previous state that needs to be preserved.
+    // no previous 06三大属性state that needs to be preserved.
     if (nextDidTimeout) {
       // Mount separate fragments for primary and fallback children.
       var nextFallbackChildren = nextProps.fallback;
@@ -15294,7 +15294,7 @@ function updateSuspenseComponent(current$$1, workInProgress, renderExpirationTim
     }
   } else {
     // This is an update. This branch is more complicated because we need to
-    // ensure the state of the primary children is preserved.
+    // ensure the 06三大属性state of the primary children is preserved.
     var prevState = current$$1.memoizedState;
     var prevDidTimeout = prevState !== null;
     if (prevDidTimeout) {
@@ -15433,7 +15433,7 @@ function updateDehydratedSuspenseComponent(current$$1, workInProgress, renderExp
     // during this render we can't. Instead, we're going to delete the whole subtree and
     // instead inject a new real Suspense boundary to take its place, which may render content
     // or fallback. The real Suspense boundary will suspend for a while so we have some time
-    // to ensure it can produce real content, but all state and pending events will be lost.
+    // to ensure it can produce real content, but all 06三大属性state and pending events will be lost.
 
     // Detach from the current dehydrated boundary.
     current$$1.alternate = null;
@@ -16073,7 +16073,7 @@ function readContext(context, observedBits) {
 // UpdateQueue is a linked list of prioritized updates.
 //
 // Like fibers, update queues come in pairs: a current queue, which represents
-// the visible state of the screen, and a work-in-progress queue, which can be
+// the visible 06三大属性state of the screen, and a work-in-progress queue, which can be
 // mutated and processed asynchronously before it is committed — a form of
 // double buffering. If a work-in-progress render is discarded before finishing,
 // we create a new work-in-progress by cloning the current queue.
@@ -16118,41 +16118,41 @@ function readContext(context, observedBits) {
 // priority render. Crucially, all updates subsequent to a skipped update also
 // remain in the queue *regardless of their priority*. That means high priority
 // updates are sometimes processed twice, at two separate priorities. We also
-// keep track of a base state, that represents the state before the first
+// keep track of a base 06三大属性state, that represents the 06三大属性state before the first
 // update in the queue is applied.
 //
 // For example:
 //
-//   Given a base state of '', and the following queue of updates
+//   Given a base 06三大属性state of '', and the following queue of updates
 //
 //     A1 - B2 - C1 - D2
 //
 //   where the number indicates the priority, and the update is applied to the
-//   previous state by appending a letter, React will process these updates as
+//   previous 06三大属性state by appending a letter, React will process these updates as
 //   two separate renders, one per distinct priority level:
 //
 //   First render, at priority 1:
-//     Base state: ''
+//     Base 06三大属性state: ''
 //     Updates: [A1, C1]
-//     Result state: 'AC'
+//     Result 06三大属性state: 'AC'
 //
 //   Second render, at priority 2:
-//     Base state: 'A'            <-  The base state does not include C1,
+//     Base 06三大属性state: 'A'            <-  The base 06三大属性state does not include C1,
 //                                    because B2 was skipped.
 //     Updates: [B2, C1, D2]      <-  C1 was rebased on top of B2
-//     Result state: 'ABCD'
+//     Result 06三大属性state: 'ABCD'
 //
 // Because we process updates in insertion order, and rebase high priority
 // updates when preceding updates are skipped, the final result is deterministic
-// regardless of priority. Intermediate state may vary according to system
-// resources, but the final state is always the same.
+// regardless of priority. Intermediate 06三大属性state may vary according to system
+// resources, but the final 06三大属性state is always the same.
 
 var UpdateState = 0;
 var ReplaceState = 1;
 var ForceUpdate = 2;
 var CaptureUpdate = 3;
 
-// Global state that is reset at the beginning of calling `processUpdateQueue`.
+// Global 06三大属性state that is reset at the beginning of calling `processUpdateQueue`.
 // It should only be read right after calling `processUpdateQueue`, via
 // `checkHasForceUpdateAfterProcessing`.
 var hasForceUpdate = false;
@@ -16368,14 +16368,14 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
             exitDisallowedContextReadInDEV();
           }
         } else {
-          // Partial state object
+          // Partial 06三大属性state object
           partialState = _payload2;
         }
         if (partialState === null || partialState === undefined) {
           // Null and undefined are treated as no-ops.
           return prevState;
         }
-        // Merge the partial state and the previous state.
+        // Merge the partial 06三大属性state and the previous 06三大属性state.
         return _assign({}, prevState, partialState);
       }
     case ForceUpdate:
@@ -16413,7 +16413,7 @@ function processUpdateQueue(workInProgress, queue, props, instance, renderExpira
         // the new list.
         newFirstUpdate = update;
         // Since this is the first update that was skipped, the current result
-        // is the new base state.
+        // is the new base 06三大属性state.
         newBaseState = resultState;
       }
       // Since this update will remain in the list, update the remaining
@@ -16454,7 +16454,7 @@ function processUpdateQueue(workInProgress, queue, props, instance, renderExpira
         // update in the new list.
         newFirstCapturedUpdate = update;
         // If this is the first update that was skipped, the current result is
-        // the new base state.
+        // the new base 06三大属性state.
         if (newFirstUpdate === null) {
           newBaseState = resultState;
         }
@@ -16494,7 +16494,7 @@ function processUpdateQueue(workInProgress, queue, props, instance, renderExpira
   }
   if (newFirstUpdate === null && newFirstCapturedUpdate === null) {
     // We processed every update, without skipping. That means the new base
-    // state is the same as the result state.
+    // 06三大属性state is the same as the result 06三大属性state.
     newBaseState = resultState;
   }
 
@@ -16946,7 +16946,7 @@ function completeWork(current, workInProgress, renderExpirationTime) {
           // If we hydrated, pop so that we can delete any remaining children
           // that weren't hydrated.
           popHydrationState(workInProgress);
-          // This resets the hacky state to fix isMounted before committing.
+          // This resets the hacky 06三大属性state to fix isMounted before committing.
           // TODO: Delete this when we delete isMounted and findDOMNode.
           workInProgress.effectTag &= ~Placement;
         }
@@ -17241,7 +17241,7 @@ function logError(boundary, errorInfo) {
   try {
     logCapturedError(capturedError);
   } catch (e) {
-    // This method must not throw, or React internal state will get messed up.
+    // This method must not throw, or React internal 06三大属性state will get messed up.
     // If console.error is overridden, or logCapturedError() shows a dialog that throws,
     // we want to report this error outside of the normal stack as a last resort.
     // https://github.com/facebook/react/issues/13188
@@ -17314,13 +17314,13 @@ function commitBeforeMutationLifeCycles(current$$1, finishedWork) {
             var prevState = current$$1.memoizedState;
             startPhaseTimer(finishedWork, 'getSnapshotBeforeUpdate');
             var instance = finishedWork.stateNode;
-            // We could update instance props and state here,
+            // We could update instance props and 06三大属性state here,
             // but instead we rely on them being set during last render.
             // TODO: revisit this when we implement resuming.
             {
               if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                 !(instance.props === finishedWork.memoizedProps) ? warning$1(false, 'Expected %s props to match memoized props before ' + 'getSnapshotBeforeUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
-                !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s state to match memoized state before ' + 'getSnapshotBeforeUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
+                !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s 06三大属性state to match memoized 06三大属性state before ' + 'getSnapshotBeforeUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
               }
             }
             var snapshot = instance.getSnapshotBeforeUpdate(finishedWork.elementType === finishedWork.type ? prevProps : resolveDefaultProps(finishedWork.type, prevProps), prevState);
@@ -17411,13 +17411,13 @@ function commitLifeCycles(finishedRoot, current$$1, finishedWork, committedExpir
         if (finishedWork.effectTag & Update) {
           if (current$$1 === null) {
             startPhaseTimer(finishedWork, 'componentDidMount');
-            // We could update instance props and state here,
+            // We could update instance props and 06三大属性state here,
             // but instead we rely on them being set during last render.
             // TODO: revisit this when we implement resuming.
             {
               if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                 !(instance.props === finishedWork.memoizedProps) ? warning$1(false, 'Expected %s props to match memoized props before ' + 'componentDidMount. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
-                !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s state to match memoized state before ' + 'componentDidMount. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
+                !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s 06三大属性state to match memoized 06三大属性state before ' + 'componentDidMount. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
               }
             }
             instance.componentDidMount();
@@ -17426,13 +17426,13 @@ function commitLifeCycles(finishedRoot, current$$1, finishedWork, committedExpir
             var prevProps = finishedWork.elementType === finishedWork.type ? current$$1.memoizedProps : resolveDefaultProps(finishedWork.type, current$$1.memoizedProps);
             var prevState = current$$1.memoizedState;
             startPhaseTimer(finishedWork, 'componentDidUpdate');
-            // We could update instance props and state here,
+            // We could update instance props and 06三大属性state here,
             // but instead we rely on them being set during last render.
             // TODO: revisit this when we implement resuming.
             {
               if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
                 !(instance.props === finishedWork.memoizedProps) ? warning$1(false, 'Expected %s props to match memoized props before ' + 'componentDidUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
-                !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s state to match memoized state before ' + 'componentDidUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
+                !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s 06三大属性state to match memoized 06三大属性state before ' + 'componentDidUpdate. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
               }
             }
             instance.componentDidUpdate(prevProps, prevState, instance.__reactInternalSnapshotBeforeUpdate);
@@ -17444,10 +17444,10 @@ function commitLifeCycles(finishedRoot, current$$1, finishedWork, committedExpir
           {
             if (finishedWork.type === finishedWork.elementType && !didWarnAboutReassigningProps) {
               !(instance.props === finishedWork.memoizedProps) ? warning$1(false, 'Expected %s props to match memoized props before ' + 'processing the update queue. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
-              !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s state to match memoized state before ' + 'processing the update queue. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
+              !(instance.state === finishedWork.memoizedState) ? warning$1(false, 'Expected %s 06三大属性state to match memoized 06三大属性state before ' + 'processing the update queue. ' + 'This might either be because of a bug in React, or because ' + 'a component reassigns its own `this.props`. ' + 'Please file an issue.', getComponentName(finishedWork.type) || 'instance') : void 0;
             }
           }
-          // We could update instance props and state here,
+          // We could update instance props and 06三大属性state here,
           // but instead we rely on them being set during last render.
           // TODO: revisit this when we implement resuming.
           commitUpdateQueue(finishedWork, updateQueue, instance, committedExpirationTime);
@@ -18097,7 +18097,7 @@ function commitWork(current$$1, finishedWork) {
 
         // If this boundary just timed out, then it will have a set of thenables.
         // For each thenable, attach a listener so that when it resolves, React
-        // attempts to re-render the boundary in the primary (pre-timeout) state.
+        // attempts to re-render the boundary in the primary (pre-timeout) 06三大属性state.
         var thenables = finishedWork.updateQueue;
         if (thenables !== null) {
           finishedWork.updateQueue = null;
@@ -18188,8 +18188,8 @@ function createClassErrorUpdate(fiber, errorInfo, expirationTime) {
         if (typeof getDerivedStateFromError !== 'function') {
           // If componentDidCatch is the only error boundary method defined,
           // then it needs to call setState to recover from errors.
-          // If no state update is scheduled then the boundary will swallow the error.
-          !(fiber.expirationTime === Sync) ? warningWithoutStack$1(false, '%s: Error boundaries should implement getDerivedStateFromError(). ' + 'In that method, return a state update to display an error message or fallback UI.', getComponentName(fiber.type) || 'Unknown') : void 0;
+          // If no 06三大属性state update is scheduled then the boundary will swallow the error.
+          !(fiber.expirationTime === Sync) ? warningWithoutStack$1(false, '%s: Error boundaries should implement getDerivedStateFromError(). ' + 'In that method, return a 06三大属性state update to display an error message or fallback UI.', getComponentName(fiber.type) || 'Unknown') : void 0;
         }
       }
     };
@@ -18313,7 +18313,7 @@ function throwException(root, returnFiber, sourceFiber, value, renderExpirationT
               sourceFiber.tag = IncompleteClassComponent;
             } else {
               // When we try rendering again, we should not reuse the current fiber,
-              // since it's known to be in an inconsistent state. Use a force updte to
+              // since it's known to be in an inconsistent 06三大属性state. Use a force updte to
               // prevent a bail out.
               var update = createUpdate(Sync);
               update.tag = ForceUpdate;
@@ -18425,7 +18425,7 @@ function throwException(root, returnFiber, sourceFiber, value, renderExpirationT
         if ((workInProgress.effectTag & DidCapture) === NoEffect && (typeof ctor.getDerivedStateFromError === 'function' || instance !== null && typeof instance.componentDidCatch === 'function' && !isAlreadyFailedLegacyErrorBoundary(instance))) {
           workInProgress.effectTag |= ShouldCapture;
           workInProgress.expirationTime = renderExpirationTime;
-          // Schedule the error boundary to re-render using updated state
+          // Schedule the error boundary to re-render using updated 06三大属性state
           var _update2 = createClassErrorUpdate(workInProgress, errorInfo, renderExpirationTime);
           enqueueCapturedUpdate(workInProgress, _update2);
           return;
@@ -18561,7 +18561,7 @@ if (enableSchedulerTracing) {
     if (didWarnStateUpdateForUnmountedComponent[componentName]) {
       return;
     }
-    warningWithoutStack$1(false, "Can't perform a React state update on an unmounted component. This " + 'is a no-op, but it indicates a memory leak in your application. To ' + 'fix, cancel all subscriptions and asynchronous tasks in %s.%s', isClass ? 'the componentWillUnmount method' : 'a useEffect cleanup function', getStackByFiberInDevAndProd(fiber));
+    warningWithoutStack$1(false, "Can't perform a React 06三大属性state update on an unmounted component. This " + 'is a no-op, but it indicates a memory leak in your application. To ' + 'fix, cancel all subscriptions and asynchronous tasks in %s.%s', isClass ? 'the componentWillUnmount method' : 'a useEffect cleanup function', getStackByFiberInDevAndProd(fiber));
     didWarnStateUpdateForUnmountedComponent[componentName] = true;
   };
 
@@ -18578,7 +18578,7 @@ if (enableSchedulerTracing) {
         if (didWarnAboutStateTransition) {
           return;
         }
-        warningWithoutStack$1(false, 'Cannot update during an existing state transition (such as within ' + '`render`). Render methods should be a pure function of props and state.');
+        warningWithoutStack$1(false, 'Cannot update during an existing 06三大属性state transition (such as within ' + '`render`). Render methods should be a pure function of props and 06三大属性state.');
         didWarnAboutStateTransition = true;
         break;
     }
@@ -18630,7 +18630,7 @@ if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
       return;
     }
 
-    // Restore the original state of the work-in-progress
+    // Restore the original 06三大属性state of the work-in-progress
     if (stashedWorkInProgressProperties === null) {
       // This should never happen. Don't throw because this code is DEV-only.
       warningWithoutStack$1(false, 'Could not replay rendering after an error. This is likely a bug in React. ' + 'Please file an issue.');
@@ -19204,7 +19204,7 @@ function completeUnitOfWork(workInProgress) {
   // next sibling. If there are no more siblings, return to the
   // parent fiber.
   while (true) {
-    // The current, flushed, state of this fiber is the alternate.
+    // The current, flushed, 06三大属性state of this fiber is the alternate.
     // Ideally nothing should rely on this, but relying on it here
     // means that we don't need an additional field on the work in
     // progress.
@@ -19376,7 +19376,7 @@ function completeUnitOfWork(workInProgress) {
 }
 
 function performUnitOfWork(workInProgress) {
-  // The current, flushed, state of this fiber is the alternate.
+  // The current, flushed, 06三大属性state of this fiber is the alternate.
   // Ideally nothing should rely on this, but relying on it here
   // means that we don't need an additional field on the work in
   // progress.
@@ -19495,7 +19495,7 @@ function renderRoot(root, isYieldy) {
             subscriber.onWorkStarted(interactions, threadID);
           } catch (error) {
             // Work thrown by an interaction tracing subscriber should be rethrown,
-            // But only once it's safe (to avoid leaving the scheduler in an invalid state).
+            // But only once it's safe (to avoid leaving the scheduler in an invalid 06三大属性state).
             // Store the error for now and we'll re-throw in finishRendering().
             if (!hasUnhandledError) {
               hasUnhandledError = true;
@@ -19546,7 +19546,7 @@ function renderRoot(root, isYieldy) {
         }
 
         {
-          // Reset global debug state
+          // Reset global debug 06三大属性state
           // We assume this is defined in DEV
           resetCurrentlyProcessingQueue();
         }
@@ -19845,7 +19845,7 @@ function pingSuspendedRoot(root, thenable, pingTime) {
 
 function retryTimedOutBoundary(boundaryFiber, thenable) {
   // The boundary fiber (a Suspense component) previously timed out and was
-  // rendered in its fallback state. One of the promises that suspended it has
+  // rendered in its fallback 06三大属性state. One of the promises that suspended it has
   // resolved, which means at least part of the tree was likely unblocked. Try
   var retryCache = void 0;
   if (enableSuspenseServerRenderer) {
@@ -19960,7 +19960,7 @@ function scheduleWorkToRoot(fiber, expirationTime) {
 function warnIfNotCurrentlyBatchingInDev(fiber) {
   {
     if (isRendering === false && isBatchingUpdates === false) {
-      warningWithoutStack$1(false, 'An update to %s inside a test was not wrapped in act(...).\n\n' + 'When testing, code that causes React state updates should be wrapped into act(...):\n\n' + 'act(() => {\n' + '  /* fire events that update state */\n' + '});\n' + '/* assert on the output */\n\n' + "This ensures that you're testing the behavior the user would see in the browser." + ' Learn more at https://fb.me/react-wrap-tests-with-act' + '%s', getComponentName(fiber.type), getStackByFiberInDevAndProd(fiber));
+      warningWithoutStack$1(false, 'An update to %s inside a test was not wrapped in act(...).\n\n' + 'When testing, code that causes React 06三大属性state updates should be wrapped into act(...):\n\n' + 'act(() => {\n' + '  /* fire events that update 06三大属性state */\n' + '});\n' + '/* assert on the output */\n\n' + "This ensures that you're testing the behavior the user would see in the browser." + ' Learn more at https://fb.me/react-wrap-tests-with-act' + '%s', getComponentName(fiber.type), getStackByFiberInDevAndProd(fiber));
     }
   }
 }
@@ -20641,7 +20641,7 @@ function scheduleRootUpdate(current$$1, element, expirationTime, callback) {
   {
     if (phase === 'render' && current !== null && !didWarnAboutNestedUpdates) {
       didWarnAboutNestedUpdates = true;
-      warningWithoutStack$1(false, 'Render methods should be a pure function of props and state; ' + 'triggering nested component updates from render is not allowed. ' + 'If necessary, trigger nested updates in componentDidUpdate.\n\n' + 'Check the render method of %s.', getComponentName(current.type) || 'Unknown');
+      warningWithoutStack$1(false, 'Render methods should be a pure function of props and 06三大属性state; ' + 'triggering nested component updates from render is not allowed. ' + 'If necessary, trigger nested updates in componentDidUpdate.\n\n' + 'Check the render method of %s.', getComponentName(current.type) || 'Unknown');
     }
   }
 
@@ -20873,7 +20873,7 @@ var didWarnAboutUnstableCreatePortal = false;
     var rootEl = getReactRootElementInContainer(container);
     var hasNonRootReactChild = !!(rootEl && getInstanceFromNode$1(rootEl));
 
-    !(!hasNonRootReactChild || isRootRenderedBySomeReact) ? warningWithoutStack$1(false, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
+    !(!hasNonRootReactChild || isRootRenderedBySomeReact) ? warningWithoutStack$1(false, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their 06三大属性state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
 
     !(container.nodeType !== ELEMENT_NODE || !container.tagName || container.tagName.toUpperCase() !== 'BODY') ? warningWithoutStack$1(false, 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.') : void 0;
   };
@@ -20938,7 +20938,7 @@ ReactBatch.prototype.commit = function () {
     // batch, so that we can flush it without flushing the other batches.
     if (this._hasChildren) {
       expirationTime = this._expirationTime = firstBatch._expirationTime;
-      // Rendering this batch again ensures its children will be the final state
+      // Rendering this batch again ensures its children will be the final 06三大属性state
       // when we flush (updates are processed in insertion order: last
       // update wins).
       // TODO: This forces a restart. Should we print a warning?
@@ -21213,7 +21213,7 @@ var ReactDOM = {
       var owner = ReactCurrentOwner.current;
       if (owner !== null && owner.stateNode !== null) {
         var warnedAboutRefsInRender = owner.stateNode._warnedAboutRefsInRender;
-        !warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(owner.type) || 'A component') : void 0;
+        !warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and 06三大属性state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(owner.type) || 'A component') : void 0;
         owner.stateNode._warnedAboutRefsInRender = true;
       }
     }
@@ -21279,7 +21279,7 @@ var ReactDOM = {
         // Check if the container itself is a React root node.
         var isContainerReactRoot = container.nodeType === ELEMENT_NODE && isValidContainer(container.parentNode) && !!container.parentNode._reactRootContainer;
 
-        !!hasNonRootReactChild ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its state and ' + 'rerender in order to remove this component.') : void 0;
+        !!hasNonRootReactChild ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its 06三大属性state and ' + 'rerender in order to remove this component.') : void 0;
       }
 
       return false;

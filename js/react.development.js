@@ -143,7 +143,7 @@ var objectAssign = shouldUseNative() ? Object.assign : function (target, source)
 };
 
 /**
- * Use invariant() to assert state which your program assumes to be true.
+ * Use invariant() to assert 06三大属性state which your program assumes to be true.
  *
  * Provide sprintf-style format (only %s is supported) and arguments
  * to provide information about what broke and what you were
@@ -300,7 +300,7 @@ function warnNoop(publicInstance, callerName) {
     if (didWarnStateUpdateForUnmountedComponent[warningKey]) {
       return;
     }
-    warningWithoutStack$1(false, "Can't call %s on a component that is not yet mounted. " + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.state` directly or define a `state = {};` ' + 'class property with the desired state in the %s component.', callerName, componentName);
+    warningWithoutStack$1(false, "Can't call %s on a component that is not yet mounted. " + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.06三大属性state` directly or define a `06三大属性state = {};` ' + 'class property with the desired 06三大属性state in the %s component.', callerName, componentName);
     didWarnStateUpdateForUnmountedComponent[warningKey] = true;
   }
 }
@@ -325,7 +325,7 @@ var ReactNoopUpdateQueue = {
    * certainty that we are **not** in a DOM transaction.
    *
    * You may want to call this when you know that some deeper aspect of the
-   * component's state has changed but `setState` was not called.
+   * component's 06三大属性state has changed but `setState` was not called.
    *
    * This will not invoke `shouldComponentUpdate`, but it will invoke
    * `componentWillUpdate` and `componentDidUpdate`.
@@ -340,14 +340,14 @@ var ReactNoopUpdateQueue = {
   },
 
   /**
-   * Replaces all of the state. Always use this or `setState` to mutate state.
-   * You should treat `this.state` as immutable.
+   * Replaces all of the 06三大属性state. Always use this or `setState` to mutate 06三大属性state.
+   * You should treat `this.06三大属性state` as immutable.
    *
-   * There is no guarantee that `this.state` will be immediately updated, so
-   * accessing `this.state` after calling this method may return the old value.
+   * There is no guarantee that `this.06三大属性state` will be immediately updated, so
+   * accessing `this.06三大属性state` after calling this method may return the old value.
    *
    * @param {ReactClass} publicInstance The instance that should rerender.
-   * @param {object} completeState Next state.
+   * @param {object} completeState Next 06三大属性state.
    * @param {?function} callback Called after component is updated.
    * @param {?string} callerName name of the calling function in the public API.
    * @internal
@@ -357,13 +357,13 @@ var ReactNoopUpdateQueue = {
   },
 
   /**
-   * Sets a subset of the state. This only exists because _pendingState is
+   * Sets a subset of the 06三大属性state. This only exists because _pendingState is
    * internal. This provides a merging strategy that is not available to deep
    * properties which is confusing. TODO: Expose pendingState or don't use it
    * during the merge.
    *
    * @param {ReactClass} publicInstance The instance that should rerender.
-   * @param {object} partialState Next partial state to be merged with state.
+   * @param {object} partialState Next partial 06三大属性state to be merged with 06三大属性state.
    * @param {?function} callback Called after component is updated.
    * @param {?string} Name of the calling function in the public API.
    * @internal
@@ -379,7 +379,7 @@ var emptyObject = {};
 }
 
 /**
- * Base class helpers for the updating state of a component.
+ * Base class helpers for the updating 06三大属性state of a component.
  */
 function Component(props, context, updater) {
   this.props = props;
@@ -394,11 +394,11 @@ function Component(props, context, updater) {
 Component.prototype.isReactComponent = {};
 
 /**
- * Sets a subset of the state. Always use this to mutate
- * state. You should treat `this.state` as immutable.
+ * Sets a subset of the 06三大属性state. Always use this to mutate
+ * 06三大属性state. You should treat `this.06三大属性state` as immutable.
  *
- * There is no guarantee that `this.state` will be immediately updated, so
- * accessing `this.state` after calling this method may return the old value.
+ * There is no guarantee that `this.06三大属性state` will be immediately updated, so
+ * accessing `this.06三大属性state` after calling this method may return the old value.
  *
  * There is no guarantee that calls to `setState` will run synchronously,
  * as they may eventually be batched together.  You can provide an optional
@@ -407,19 +407,19 @@ Component.prototype.isReactComponent = {};
  *
  * When a function is provided to setState, it will be called at some point in
  * the future (not synchronously). It will be called with the up to date
- * component arguments (state, props, context). These values can be different
+ * component arguments (06三大属性state, props, context). These values can be different
  * from this.* because your function may be called after receiveProps but before
- * shouldComponentUpdate, and this new state, props, and context will not yet be
+ * shouldComponentUpdate, and this new 06三大属性state, props, and context will not yet be
  * assigned to this.
  *
- * @param {object|function} partialState Next partial state or function to
- *        produce next partial state to be merged with current state.
- * @param {?function} callback Called after state is updated.
+ * @param {object|function} partialState Next partial 06三大属性state or function to
+ *        produce next partial 06三大属性state to be merged with current 06三大属性state.
+ * @param {?function} callback Called after 06三大属性state is updated.
  * @final
  * @protected
  */
 Component.prototype.setState = function (partialState, callback) {
-  !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? invariant(false, 'setState(...): takes an object of state variables to update or a function which returns an object of state variables.') : void 0;
+  !(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null) ? invariant(false, 'setState(...): takes an object of 06三大属性state variables to update or a function which returns an object of 06三大属性state variables.') : void 0;
   this.updater.enqueueSetState(this, partialState, callback, 'setState');
 };
 
@@ -428,7 +428,7 @@ Component.prototype.setState = function (partialState, callback) {
  * certainty that we are **not** in a DOM transaction.
  *
  * You may want to call this when you know that some deeper aspect of the
- * component's state has changed but `setState` was not called.
+ * component's 06三大属性state has changed but `setState` was not called.
  *
  * This will not invoke `shouldComponentUpdate`, but it will invoke
  * `componentWillUpdate` and `componentDidUpdate`.
@@ -560,7 +560,7 @@ function flushFirstCallback() {
   var flushedNode = firstCallbackNode;
 
   // Remove the node from the list before calling the callback. That way the
-  // list is in a consistent state even if the callback throws.
+  // list is in a consistent 06三大属性state even if the callback throws.
   var next = firstCallbackNode.next;
   if (firstCallbackNode === next) {
     // This is the last callback in the list.
